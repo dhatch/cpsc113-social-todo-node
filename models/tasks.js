@@ -12,7 +12,11 @@ var stringField = {
 var TaskSchema = new Schema({
     owner: ObjectId,
     title: stringField,
-    description: stringField,
+    description: {
+        type: String,
+        minLength: 1,
+        maxLength: 4999
+    },
     isComplete: Boolean,
     collaborators: [String]
 });
